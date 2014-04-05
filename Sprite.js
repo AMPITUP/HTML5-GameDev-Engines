@@ -4,7 +4,6 @@ function Sprite(canvas, file, width, height) {
     this.file = file;
     this.width = width;
     this.height = height;
-    this.collision = false;
     this.shown = true;
     this.x = 0;
     this.y = 0;
