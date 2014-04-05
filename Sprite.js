@@ -1,10 +1,9 @@
-function Sprite(canvas, file, width, height, collisions) {
+function Sprite(canvas, file, width, height) {
     this.canvas = canvas;
     this.ctx = this.canvas.getContext('2d');
     this.file = file;
     this.width = width;
     this.height = height;
-    this.collisions = collisions;
     this.collision = false;
     this.shown = true;
     this.x = 0;
@@ -18,9 +17,6 @@ function Sprite(canvas, file, width, height, collisions) {
     } //endif
     if (width === isNaN) {
         console.log("Failure! Width was not set to  a number. You wrote " + width);
-    } //endif
-    if (collisions != true || collisions != false) {
-        console.log("Failure! Collisions must be a boolen. You wrote " + collisions);
     } //endif
     
     this.setSize = function(newWidth, newHeight) {
@@ -39,19 +35,18 @@ function Sprite(canvas, file, width, height, collisions) {
     } //end setSpeed()
     
     this.draw = function(){
-    ctx = this.context;
 
-    ctx.save();
+        ctx.save();
     
-    ctx.translate(this.x, this.y);
-    ctx.rotate(this.imgAngle);
-	ctx.drawImage(this.image, 
-    0 - (this.width / 2), 
-    0 - (this.height / 2),
-    this.width, this.height);
-    ctx.restore();
+        ctx.translate(this.x, this.y);
+        ctx.rotate(this.imgAngle);
+	    ctx.drawImage(this.image, 
+        0 - (this.width / 2), 
+        0 - (this.height / 2),
+        this.width, this.height);
+        ctx.restore();
      
-  } // end draw()
+    } // end draw()
     
     this.update = function() {
         this.x += this.dx;
@@ -81,8 +76,9 @@ function Sprite(canvas, file, width, height, collisions) {
         	    (thisLeft > objRight)) {
         	        collision = false;
 	        } //endif     
-        }
-    }
+        } //endif
+    } //end collides()
     
+
     
 } //end Sprite()
