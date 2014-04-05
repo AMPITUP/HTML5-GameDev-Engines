@@ -24,6 +24,22 @@ function Sprite(canvas, file, width, height) {
         this.height = newHeight
     } //end setSize()
     
+    this.setImageFile = function(newfile) {
+    	this.file = newFile;
+    } //end setImageFile()
+    
+    this.getSpriteSpeed = function() {
+    	spriteSpeed = Math.sqrt((this.dx * this.dx) + (this.dy * this.dy));
+    
+    	return spriteSpeed;
+    } //end getSpeed()
+    
+    this.getSpritePosition = function() {
+    	spritePosition = Math.sqrt((this.x * this.x) + (this.y * this.y));
+    	
+    	return spritePosition;
+    } //end getSpritePosition()
+    
     this.setPosition = function(newX, newY) {
         this.x = newX;
         this.y = newY;
@@ -57,7 +73,7 @@ function Sprite(canvas, file, width, height) {
         } // end if
     } // end update
     
-    this.collides(object) {
+    this.collides = function(object) {
         if (this.visible && object.visible) {
             thisLeft = this.x - (this.width / 2);
 	        thisRight = this.x + (this.width / 2);
