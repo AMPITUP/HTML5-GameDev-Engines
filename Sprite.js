@@ -21,10 +21,17 @@ function Sprite(canvas, file, width, height) {
     
     this.setSize = function(newWidth, newHeight) {
         this.width = newWidth;
-        this.height = newHeight
+        this.height = newHeight;
+        
+        if (newHeight === isNaN) {
+            console.log("Failure! Height was not set to a number. You wrote " + newHeight);
+        } //endif
+        if (newWidth === isNaN) {
+            console.log("Failure! Width was not set to  a number. You wrote " + newWidth);
+        } //endif
     } //end setSize()
     
-    this.setImageFile = function(newfile) {
+    this.setImageFile = function(newFile) {
     	this.file = newFile;
     } //end setImageFile()
     
@@ -43,11 +50,25 @@ function Sprite(canvas, file, width, height) {
     this.setPosition = function(newX, newY) {
         this.x = newX;
         this.y = newY;
+        
+        if (newX === isNaN) {
+            console.log("Failure! X was not set to a number. You wrote " + newX);
+        } //endif
+        if (newY === isNaN) {
+            console.log("Failure! Y was not set to a number. You wrote " + newY);
+        } //endif
     } //end setPosition()
     
     this.setSpeed = function(newDX, newDY) {
         this.dx = newDX;
         this.dy = newDY;
+        
+        if (newDX === isNaN) {
+            console.log("Failure! DX was not set to a number. You wrote " + newDX);
+        } //endif
+        if (newDY === isNaN) {
+            console.log("Failure! DY was not set to a number. You wrote " + newDY);
+        } //endif
     } //end setSpeed()
     
     this.draw = function(){
