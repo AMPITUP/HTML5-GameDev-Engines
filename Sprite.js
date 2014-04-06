@@ -1,9 +1,10 @@
-function Sprite(canvas, file, width, height) {
+function Sprite(canvas, file, width, height, name) {
     this.canvas = canvas;
     this.ctx = this.canvas.getContext('2d');
     this.file = file;
     this.width = width;
     this.height = height;
+    this.name = name;
     this.shown = true;
     this.x = 0;
     this.y = 0;
@@ -40,6 +41,28 @@ function Sprite(canvas, file, width, height) {
     	return spriteSpeed;
     } //end getSpeed()
     
+    this.getSpriteDX = function() {
+    	return this.dx;
+    } //end getSpriteDX()
+    
+    this.getSpriteDY = function() {
+    	return this.dy;
+    } //end getSpriteDY()
+    
+    this.spriteReport(size) {
+    	if (size === "full") {
+    	    console.log("Name: " + this.name);
+    	    console.log("X: " + this.x);
+    	    console.log("Y: " + this.y);
+    	    console.log("DX: " + this.dx);
+    	    console.log("DY: " + this.dy);
+    	    console.log("Shown: " + this.shown);
+    	    console.log("Image File: " + this.file);
+    	    console.log("Width: " + this.width);
+    	    console.log("Height: " + this.height);
+    	}
+    } //end spriteFullReport()
+    
     this.getSpritePosition = function() {
     	spritePosition = Math.sqrt((this.x * this.x) + (this.y * this.y));
     	
@@ -69,6 +92,14 @@ function Sprite(canvas, file, width, height) {
             console.log("Failure! DY was not set to a number. You wrote " + newDY);
         } //endif
     } //end setSpeed()
+    
+    this.hide() {
+    	this.shown = false;
+    } //end hide()
+    
+    this.show() {
+    	this.shown = true;
+    } //end show()
     
     this.draw = function(){
 
