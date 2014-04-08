@@ -49,7 +49,7 @@ function Sprite(canvas, file, width, height, name) {
     	return this.dy;
     } //end getSpriteDY()
     
-    this.spriteReport(size) {
+    this.spriteReport = function(size) {
     	if (size === "full") {
     	    console.log("Name: " + this.name);
     	    console.log("X: " + this.x);
@@ -60,8 +60,11 @@ function Sprite(canvas, file, width, height, name) {
     	    console.log("Image File: " + this.file);
     	    console.log("Width: " + this.width);
     	    console.log("Height: " + this.height);
-    	}
-    } //end spriteFullReport()
+    	} //endif
+        if (size === "partial") {
+            
+        } //endif
+    } //end spriteReport()
     
     this.getSpritePosition = function() {
     	spritePosition = Math.sqrt((this.x * this.x) + (this.y * this.y));
