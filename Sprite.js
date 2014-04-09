@@ -62,7 +62,12 @@ function Sprite(canvas, file, width, height, name) {
     	    console.log("Height: " + this.height);
     	} //endif
         if (size === "partial") {
-            
+            console.log("Name: " + this.name);
+    	    console.log("X: " + this.x);
+    	    console.log("Y: " + this.y);
+    	    console.log("DX: " + this.dx);
+    	    console.log("DY: " + this.dy);
+    	    console.log("Shown: " + this.shown);
         } //endif
     } //end spriteReport()
     
