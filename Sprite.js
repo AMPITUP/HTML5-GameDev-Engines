@@ -101,11 +101,11 @@ function Sprite(canvas, file, width, height, name) {
         } //endif
     } //end setSpeed()
     
-    this.hide() {
+    this.hide = function() {
     	this.shown = false;
     } //end hide()
     
-    this.show() {
+    this.show = function() {
     	this.shown = true;
     } //end show()
     
