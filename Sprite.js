@@ -89,6 +89,14 @@ function Sprite(canvas, file, width, height, name) {
         } //endif
     } //end setPosition()
     
+    this.setX = function(newX) {
+    	this.x = newX;
+    } //end setX()
+    
+    this.setY = function(newY) {
+    	this.y = newY;
+    } //end setY()
+    
     this.setSpeed = function(newDX, newDY) {
         this.dx = newDX;
         this.dy = newDY;
@@ -100,6 +108,14 @@ function Sprite(canvas, file, width, height, name) {
             console.log("Failure! DY was not set to a number. You wrote " + newDY);
         } //endif
     } //end setSpeed()
+    
+    this.setDX = function(newDX) {
+    	this.dx = newDX;
+    } //end setDX()
+    
+    this.setDY = function(newDY) {
+    	this.dy = newDY;
+    } //end setDY()
     
     this.hide = function() {
     	this.shown = false;
