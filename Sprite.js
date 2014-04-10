@@ -6,8 +6,8 @@ function Sprite(canvas, file, width, height, name) {
     this.height = height;
     this.name = name;
     this.shown = true;
-    this.x = 0;
-    this.y = 0;
+    this.x = this.canvas.width / 2;
+    this.y = this.canvas.height / 2;
     this.dx = 0;
     this.dy = 0;
     
