@@ -27,3 +27,11 @@ function collision(object1, object2) {
         } //endif     
     } //endif
 } //end collision()
+
+//drag
+//Nota Bene: This function expects that the Sprite.js function is used
+function drag(object, force) {
+    dSpeed = object.getSpeed();
+    dSpeed *= force;
+    object.setSpeed(speed);
+} //end drag()
