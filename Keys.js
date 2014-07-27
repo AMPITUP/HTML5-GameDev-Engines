@@ -1,4 +1,4 @@
-var currentKey = null;
+var currentKey;
 var keysDown = new Array(256);
 var virtKeys = false;
 
