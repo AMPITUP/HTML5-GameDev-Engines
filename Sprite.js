@@ -17,7 +17,7 @@ function Sprite(canvas, file, width, height, name) {
         console.log("Failure! Height was not set to a number. You wrote " + height);
     } //endif
     if (width === isNaN) {
-        console.log("Failure! Width was not set to  a number. You wrote " + width);
+        console.log("Failure! Width was not set to a number. You wrote " + width);
     } //endif
 
     //find if sprite is moving
