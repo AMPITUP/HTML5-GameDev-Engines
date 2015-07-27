@@ -10,6 +10,7 @@ function Sprite(canvas, file, width, height, name) {
     this.y = this.canvas.height / 2;
     this.dx = 0;
     this.dy = 0;
+    this.isMoving = false;
     
     //debugging
     if (height === isNaN) {
@@ -18,6 +19,14 @@ function Sprite(canvas, file, width, height, name) {
     if (width === isNaN) {
         console.log("Failure! Width was not set to  a number. You wrote " + width);
     } //endif
+
+    //find if sprite is moving
+    if (this.dx != 0 || this.dy != 0) {
+        this.isMoving = true;
+    }
+    if (this.dx === 0 || this.dy === 0) {
+        this.isMoving = false;
+    }
     
     this.setSize = function(newWidth, newHeight) {
         this.width = newWidth;
@@ -65,8 +74,7 @@ function Sprite(canvas, file, width, height, name) {
             console.log("Name: " + this.name);
     	    console.log("X: " + this.x);
     	    console.log("Y: " + this.y);
-    	    console.log("DX: " + this.dx);
-    	    console.log("DY: " + this.dy);
+    	    console.log("Sprite is Moving: " + this.isMoving);
     	    console.log("Shown: " + this.shown);
         } //endif
     } //end spriteReport()
