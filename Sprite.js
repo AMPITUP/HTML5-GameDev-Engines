@@ -2,6 +2,7 @@ function Sprite(canvas, file, width, height, name) {
     this.canvas = canvas;
     this.ctx = this.canvas.getContext('2d');
     this.file = file;
+    this.image = new Image();
     this.width = width;
     this.height = height;
     this.name = name;
@@ -132,7 +133,7 @@ function Sprite(canvas, file, width, height, name) {
     this.show = function() {
     	this.shown = true;
     } //end show()
-    
+
     this.draw = function(){
 
         ctx.save();
