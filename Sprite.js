@@ -148,7 +148,6 @@ function Sprite(canvas, file, width, height, name) {
     this.update = function() {
         this.x += this.dx;
         this.y += this.dy;
-        this.checkBounds();
         if (this.visible){
             this.draw();
         } // end if
