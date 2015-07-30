@@ -1,4 +1,4 @@
-function Sprite(canvas, file, width, height, name) {
+function Sprite(canvas, file, width, height, startX, startY, name) {
     this.canvas = canvas;
     this.ctx = this.canvas.getContext('2d');
     this.file = file;
@@ -7,8 +7,8 @@ function Sprite(canvas, file, width, height, name) {
     this.height = height;
     this.name = name;
     this.shown = true;
-    this.x = this.canvas.width / 2;
-    this.y = this.canvas.height / 2;
+    this.x = startX;
+    this.y = startY;
     this.dx = 0;
     this.dy = 0;
     this.isMoving = false;
@@ -140,7 +140,7 @@ function Sprite(canvas, file, width, height, name) {
     
         ctx.translate(this.x, this.y);
         ctx.rotate(this.imgAngle);
-	    ctx.drawImage(this.image, 0 - (this.width / 2), 0 - (this.height / 2), this.width, this.height);
+	    ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
         ctx.restore();
      
     } // end draw()
